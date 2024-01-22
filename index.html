@@ -7,6 +7,41 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
+    <div class="sidebar">
+        <div class="logo">MISA</div>
+    </div>
+    <main>
+        <p class="description">
+            This is not a real online service! You know you need something
+            like this in your life to help you realize your deepest dreams.
+            Sign up now to get started.
+        </p>
+        <p>
+            You <em>know</em> you want to.
+        </p>
+        <form action="#" method="post">
+            <fieldset>
+                <h2 class="form-title">Let's do this!</h2>
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first_name" required>
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last_name" required>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+                <label for="phone-number">Phone Number</label>
+                <input type="tel" id="phone-number" name="phone">
+                <label for="password">Password (at least 6 characters)</label>
+                <input type="password" id="password" name="password" minlength="6"
+                pattern=".{6,}" title="Please enter at least 6 characters." required>
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm_password" required>
+            </fieldset>
+            <button type="submit">Create Account</button>
+        </form>
+        <div class="exist">
+            <p class="account-exist">Alredy have and account?</p>
+            <a href="#">Log in</a>
+        </div>
+    </main>
 </body>
 </html>
