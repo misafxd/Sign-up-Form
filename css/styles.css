@@ -2,4 +2,43 @@
 
 :root {
     font-family: 'Jost', sans-serif;
+    --main-color: rgba(255, 255, 255, 0.897);
 }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    display: flex;
+}
+
+.sidebar {
+    width: clamp(50rem, 30%, 70rem);
+    height: 100dvh;
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
+    background-position: relative;
+    color: var(--main-color);
+}
+
+.sidebar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: inherit;
+    background-size: inherit;
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+.sidebar .logo {
+    color: white;
+    text-align: center;
+    padding: 8rem 0;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
