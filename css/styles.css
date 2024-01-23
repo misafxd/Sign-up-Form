@@ -3,6 +3,8 @@
 :root {
     font-family: 'Jost', sans-serif;
     --main-color: rgba(255, 255, 255, 0.897);
+    --initial-padding: 4rem;
+    --btn-color: rgb(44, 16, 89);
 }
 
 * {
@@ -14,31 +16,129 @@ body {
     display: flex;
 }
 
-.sidebar {
-    width: clamp(50rem, 30%, 70rem);
+.sidebar  {
+    width: clamp(40%, 45%, 50%);
     height: 100dvh;
-    background-image: url(../images/bg.jpg);
-    background-size: cover;
-    background-position: relative;
+    background: url(../images/bg.jpg) center/cover;
     color: var(--main-color);
-}
-
-.sidebar::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: inherit;
-    background-size: inherit;
-    backdrop-filter: blur(10px);
-    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    padding-inline: var(--initial-padding);
+    position: relative;
+    align-items: center;
+    justify-content: center;
 }
 
 .sidebar .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: white;
-    text-align: center;
-    padding: 8rem 0;
+    padding: 2rem 1rem;
     font-weight: bold;
     letter-spacing: 0.1em;
 }
 
+.sidebar span {
+    position: absolute;
+    bottom: 0;
+}
+
+.sidebar span, .logo-img, .logo{
+    z-index: 2;
+}
+.blur {
+    position: absolute;
+    backdrop-filter: blur(2px);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.main {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f9fafb;
+}
+
+.description {
+    font-weight: bold;
+    padding-inline: var(--initial-padding);
+    width: min(80%, 45ch);
+    line-height: 1.1;
+    font-size: 1.2rem;
+}
+
+form .submit-btn {
+    margin-inline: var(--initial-padding);
+}
+
+
+.form {
+    margin: 1.5rem 0;
+    height: 40dvh;
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.397);
+    display: flex;
+    flex-direction: column;
+    padding-inline-start: var(--initial-padding);
+    padding-inline-end: 4rem;
+    gap: 1rem;
+    padding-block: 1.5rem;
+}
+
+fieldset {
+    display: flex;
+    border: none;
+    gap: 2.5rem;
+    padding: 0;
+    width: 90%;
+}
+
+.column {
+    display:flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+input{
+    margin-block: 0.25rem;
+    padding-inline-start: 0.5rem;
+    padding-block: 0.4rem;
+    background-color: #f9fafb;
+    border: 1px solid var(--btn-color);
+    border-radius: .25rem;
+}
+
+.exist {
+    padding-inline: var(--initial-padding);
+}
+
+.exist a {
+    color: black;
+}
+
+.submit-btn {
+    padding: 0.5rem 1rem;
+    color: var(--main-color);
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border: none;
+    border-radius: 0.5rem;
+}
+
+input:valid{
+    border-color: var(--btn-color) ;
+}
+
+input:invalid {
+    border-color: rgba(255, 0, 0, 0.363);
+}
+
+input:focus{
+    border: 1px solid var(--btn-color);
+}
