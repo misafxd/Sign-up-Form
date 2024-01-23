@@ -5,6 +5,7 @@
     --main-color: rgba(255, 255, 255, 0.897);
     --initial-padding: 4rem;
     --btn-color: rgb(44, 16, 89);
+    --mini-padding: 2rem;
 }
 
 * {
@@ -47,6 +48,7 @@ body {
 .sidebar span, .logo-img, .logo{
     z-index: 2;
 }
+
 .blur {
     position: absolute;
     backdrop-filter: blur(2px);
@@ -141,4 +143,46 @@ input:invalid {
 
 input:focus{
     border: 1px solid var(--btn-color);
+}
+
+@media (max-width: 500px) {
+    * {
+        font-size: 0.8rem;
+    }
+
+    body {
+        flex-direction: column;
+        height: 100dvh;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: 30%;
+        margin-bottom: 1.5rem;
+    }
+
+    .logo-img {
+        width: 10rem;
+    }
+
+    .description {
+        width: 100%;
+        padding-inline: var(--mini-padding) ;
+    }
+
+    fieldset {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        height: fit-content;
+    }
+
+    .form {
+        padding: var(--mini-padding);
+        height: max-content;
+    }
+
+    .exist a{
+        padding-bottom: 1rem;
+    }
 }
