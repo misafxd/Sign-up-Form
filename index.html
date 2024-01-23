@@ -8,35 +8,48 @@
 </head>
 <body>
     <div class="sidebar">
-        <h1 class="logo">MAFS Form Project</h1>
+        <div class="blur"></div>
+        <div class="logo">
+            <img class="logo-img" src="./images/misa_logo.png" alt="logo mafs projects" width="250">
+            <h1>MAFS</h1>
+        </div>
+        <span>
+            Foto de <a href="https://unsplash.com/es/@valentinbvs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Valentin BEAUVAIS</a> en <a href="https://unsplash.com/es/fotos/coches-en-la-carretera-entre-edificios-de-gran-altura-durante-la-noche-yVUQlyRlJSw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+        </span>
     </div>
-    <main>
+    <main class="main">
         <p class="description">
             This is not a real online service! You know you need something
             like this in your life to help you realize your deepest dreams.
             Sign up now to get started.
         </p>
-        <p>
+        <p class="description">
             You <em>know</em> you want to.
         </p>
         <form action="#" method="post">
-            <fieldset>
+            <div class="form">
                 <h2 class="form-title">Let's do this!</h2>
-                <label for="first-name">First Name</label>
-                <input type="text" id="first-name" name="first_name" required>
-                <label for="last-name">Last Name</label>
-                <input type="text" id="last-name" name="last_name" required>
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="example@domain.com" required>
-                <label for="phone-number">Phone Number</label>
-                <input type="tel" id="phone-number" name="phone">
-                <label for="password">Password (at least 6 characters)</label>
-                <input type="password" id="password" name="password" minlength="6"
-                pattern=".{6,}" title="Please enter at least 6 characters." required>
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" name="confirm_password" required>
-            </fieldset>
-            <button type="submit">Create Account</button>
+                <fieldset>
+                    <div class="column">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first_name" pattern="[A-Za-z]+" required>
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last_name" pattern="[A-Za-z]+" required>
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+                    </div>
+                    <div class="column">
+                        <label for="phone-number">Phone Number</label>
+                        <input type="tel" id="phone-number" name="phone" pattern="[0-9]{10}" required>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" minlength="6"
+                        pattern=".{6,}" title="Please enter at least 6 characters." required>
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" name="confirm_password" required>
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit" class="submit-btn">Create Account</button>
         </form>
         <div class="exist">
             <p class="account-exist">Alredy have and account?</p>
